@@ -163,7 +163,7 @@ module.exports = function hash_src(options)
         });
     }
     
-    function rewrite(data, base)
+    function rewrite(data, base, no_prefix)
     {
         return data.replace(options.regex, function add_hash()
         {
@@ -172,7 +172,7 @@ module.exports = function hash_src(options)
             
             link = clean_link(props.link, props.abs ? null : base);
 
-            if (options.cdn_prefix) {
+            if (!no_prefix && options.cdn_prefix) {
                 props.link = options.cdn_prefix + props.link;
             }
             if (hashes[link]) {
@@ -185,12 +185,20 @@ module.exports = function hash_src(options)
     
     function hash_it(file, encoding, callback)
     {
+        var filePath = (file.base && file.path) ? file.relative : file.path;
+        var extVal = p.extname(filePath).toLowerCase();
+        var no_prefix = false;
+
+        if ((options.cdn_prefix_except_ext || []).indexOf(extVal) > -1) {
+            no_prefix = true;
+        }
+
         var data = file.contents.toString(),
             base = p.relative(options.src_path, p.dirname(file.path));
         
         get_hashes(data, base, function onhash()
         {
-            file.contents = new Buffer(rewrite(data, base));
+            file.contents = new Buffer(rewrite(data, base, no_prefix));
             callback(null, file);
         });
     }

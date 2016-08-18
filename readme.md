@@ -94,6 +94,8 @@ verbose     Whether or not to log info about what is happening (default: false)
             Useful for debugging
 
 cdn_prefix  And cdn prefix url
+
+cdn_prefix_except_ext  An array of the types of files no need to add cdn_prefix, example: ['.css']
 ```
 
 ## License
