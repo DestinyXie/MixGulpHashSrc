@@ -1,0 +1,26 @@
+{
+  "name": "mix-gulp-hash-src",
+  "version": "0.1.2",
+  "description": "Automatically add cache busting hashes to links in HTML and CSS,inherit form [gulp-hash-src](https://www.npmjs.com/package/gulp-hash-src)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mix gulpplugin hashsrc"
+  ],
+  "author": {
+      "name": "DestinyXie",
+      "email": "xber1986@gmail.com"
+  },
+  "dependencies": {
+    "through2": "=0.4.2",
+    "fs_helper": "=0.1.11",
+    "girdle": "=0.2.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DestinyXie/MixGulpHashSrc.git"
+  },
+  "license": "MIT"
+}
