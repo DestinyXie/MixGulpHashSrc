@@ -94,7 +94,7 @@ module.exports = function hash_src(options)
         options.enc = "hex";
     }
     if (!options.exts) {
-        options.exts = [".js", ".css", ".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".pdf", ".ico", ".ttf", ".woff", ".mp3", ".ogg", ".ogv", ".mp4", ".webm", ".zip", ".tar", ".gz", ".bz2"];
+        options.exts = [".js", ".css", ".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg", ".pdf", ".ico", ".ttf", ".woff", ".mp3", '.wav', ".ogg", ".ogv", ".mp4", ".webm", ".zip", ".tar", ".gz", ".bz2"];
     }
     if (!options.regex) {
         options.regex = find_regex;

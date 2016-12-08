@@ -1,6 +1,6 @@
 {
   "name": "mix-gulp-hash-src",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Automatically add cache busting hashes to links in HTML and CSS,inherit form [gulp-hash-src](https://www.npmjs.com/package/gulp-hash-src)",
   "main": "hash-src.js",
   "scripts": {
